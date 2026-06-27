@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musée des ISO - Accueil Général</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
+        @keyframes fondQuiBouge {
+            0% { background-position: 0% 50%; background-size: 110% 110%; }
+            50% { background-position: 100% 50%; background-size: 120% 120%; }
+            100% { background-position: 0% 50%; background-size: 110% 110%; }
+        }
+
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            /* On utilise ton image comme fond d'écran */
+            background-image: url('macOS-Tahoe-Default-Light.png');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            animation: fondQuiBouge 20s ease infinite;
+            margin: 0; 
+            padding: 20px; 
+        }
         .récipient { max-width: 900px; margin: auto; }
         
         /* En-tête transformé en Hub d'accueil */
