@@ -1,285 +1,417 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musée des ISO - Accueil Général</title>
-    <link rel="shortcut icon" type="image/png" href="favicon-macos.png?v=5">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-macos.png?v=5">
-    <style>
-        @keyframes fondQuiBouge {
-            0% { background-position: 0% 50%; background-size: 110% 110%; }
-            50% { background-position: 100% 50%; background-size: 120% 120%; }
-            100% { background-position: 0% 50%; background-size: 110% 110%; }
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musée des ISO - macOS</title>
+  <style>
+    :root {
+      --bg-color: #0b0b0e;
+      --card-bg: #16161a;
+      --accent-color: #0071e3;
+      --text-main: #f5f5f7;
+      --text-secondary: #86868b;
+      --border-color: #2c2c2e;
+    }
 
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            background-image: url('macOS-Tahoe-Default-Light.png');
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            animation: fondQuiBouge 20s ease infinite;
-            margin: 0; 
-            padding: 20px; 
-        }
-        .récipient { max-width: 900px; margin: auto; }
-        
-        /* En-tête transformé en Hub d'accueil */
-        .en-tête { background-color: #0078d4; color: white; padding: 30px 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; }
-        .en-tête h1 { margin: 0 0 10px 0; font-size: 2.2em; }
-        .en-tête p { margin: 0 0 20px 0; font-size: 1.1em; opacity: 0.9; }
-        
-        /* Conteneur des boutons de navigation rapide */
-        .navigation-hub { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-hub { color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; font-size: 1em; transition: background 0.2s, transform 0.2s; }
-        .btn-windows { background-color: #005a9e; border: 1px solid #ffffff40; }
-        .btn-windows:hover { background-color: #004578; }
-        .btn-mac { background-color: #1d1d1f; border: 1px solid #ffffff40; }
-        .btn-mac:hover { background-color: #000000; }
-        .btn-iphone { background-color: #0071e3; border: 1px solid #ffffff40; }
-        .btn-iphone:hover { background-color: #0077ed; transform: translateY(-2px); }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 20px;
+    }
 
-        .catégorie { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h2 { border-bottom: 2px solid #0078d4; color: #0078d4; margin-top: 0; padding-bottom: 10px; }
-        
-        /* Style des éléments macOS en mode Liste / Style iPhone */
-        .iso-article { 
-            display: flex; 
-            flex-direction: column; 
-            padding: 15px 0; 
-            border-bottom: 1px solid #eee; 
-            text-decoration: none;
-            color: inherit;
-            transition: background-color 0.2s;
-        }
-        .iso-article:hover {
-            background-color: #f8f9fa;
-            padding-left: 5px;
-            padding-right: 5px;
-            border-radius: 5px;
-        }
-        .iso-article:last-child { border-bottom: none; }
-        
-        .iso-titre { 
-            font-weight: bold; 
-            font-size: 1.1em; 
-            color: #0078d4; 
-            margin-bottom: 5px;
-        }
-        .details { 
-            font-size: 0.9em; 
-            color: #555; 
-        }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        /* Style du Tableau des Émulateurs */
-        .table-emulateurs { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        .table-emulateurs th, .table-emulateurs td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        .table-emulateurs th { background-color: #0078d4; color: white; border-radius: 4px 4px 0 0; }
-        .table-emulateurs tr:hover { background-color: #f9f9f9; }
-        .badge-emu { background-color: #1d1d1f; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
-    </style>
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      background-color: #1c1c1e;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #2c2c2e;
+      border-color: var(--accent-color);
+    }
+
+    .search-bar input {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background-color: #1c1c1e;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .era-title {
+      font-size: 1.4rem;
+      color: var(--accent-color);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+      margin: 40px auto 20px auto;
+      max-width: 1200px;
+    }
+
+    .macos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-color);
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin: 0 0 5px 0;
+    }
+
+    .release-date {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* Modale (Pop-up) */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: #1c1c1e;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 25px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 1.6rem;
+      color: white;
+      border: 2px solid var(--border-color);
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: inline-block;
+      width: 80%;
+    }
+
+    .modal-body {
+      font-size: 1rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      border-top: 1px solid var(--border-color);
+      padding-top: 15px;
+      text-align: left;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #2c2c2e;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background: #3a3a3c;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-top: 50px;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
-<div class="récipient">
+  <header>
+    <h1>🍏 Musée des ISO macOS</h1>
+    <a href="https://eyden57185.github.io/tous-les-iphones/" class="back-link">📱 Encyclopédie iPhone</a>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Rechercher une version (ex: Tahoe, Sequoia, Snow Leopard)...">
+    </div>
+  </header>
 
-    <!-- En-tête avec Menu d'Accueil Général -->
-    <div class="en-tête">
-        <h1>Le Musée des ISO</h1>
-        <p>Le hub central pour toutes les versions de Windows et macOS</p>
-        
-        <div class="navigation-hub">
-            <a href="https://eyden57185.github.io/windows-iso-Eyden57/" class="btn-hub btn-windows">🌐 Visiter le Site Windows</a>
-            <a href="#macos-section" class="btn-hub btn-mac">🍏 Voir les ISO macOS</a>
-            <a href="https://eyden57185.github.io/tous-les-iphones/" class="btn-hub btn-iphone">📱 Encyclopédie iPhone</a>
+  <main>
+    <!-- macOS Modernes -->
+    <h2 class="era-title">macOS Modernes (2021 - 2026)</h2>
+    <div class="macos-grid">
+      <div class="card" data-details="Prochaine version majeure de macOS prévue pour 2026.">
+        <div class="card-info">
+          <h3>macOS 27 Golden Gate</h3>
+          <p class="release-date">Sortie : 14 Septembre 2026</p>
         </div>
-    </div>
-
-    <!-- Point d'ancrage pour le bouton macOS -->
-    <div id="macos-section"></div>
-
-    <!-- 1. Catégorie macOS Modernes -->
-    <div class="catégorie">
-        <h2>macOS Modernes</h2>
-        
-        <a href="https://archive.org/details/macos-tahoe" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 27 Golden Gate (14 septembre 2026)</span>
-            <span class="details">Nouvelle interface "Liquid Glass", barre de menu transparente, icônes et couleurs personnalisables, Spotlight amélioré</span>
-        </a>
-        
-        <a href="https://archive.org/details/macos-tahoe" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 26 Tahoe (15 Septembre 2025)</span>
-            <span class="details">Nouvelle interface "Liquid Glass", barre de menu transparente, icônes et couleurs personnalisables, Spotlight amélioré</span>
-        </a>
-
-        <a href="https://archive.org/details/install-mac-os-sequoia" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 15 Sequoia (16 Septembre 2024)</span>
-            <span class="details">Dernière mise à jour majeure du système</span>
-        </a>
-
-        <a href="https://archive.org/download/macos-ventura-and-sonoma" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 14 Sonoma (26 Septembre 2023)</span>
-            <span class="details">Nouvelle expérience avec les widgets sur le bureau et économiseurs d'écran</span>
-        </a>
-
-        <a href="https://archive.org/download/macos-ventura-and-sonoma" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 13 Ventura (24 Octobre 2022)</span>
-            <span class="details">Introduction de Stage Manager et des nouveaux réglages système</span>
-        </a>
-
-        <a href="https://archive.org/details/macOS_Monterey_12_6_1" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 12 Monterey (25 Octobre 2021)</span>
-            <span class="details">Fonctionnalités Contrôle universel et Raccourcis sur Mac</span>
-        </a>
-    </div>
-
-    <!-- 2. Catégorie macOS Classique -->
-    <div class="catégorie">
-        <h2>macOS Classique</h2>
-
-        <a href="https://archive.org/download/macOS-X-images/Big%20Sur%2011.iso" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 11 Big Sur (12 Novembre 2020)</span>
-            <span class="details">Nouvelle interface épurée et transition vers les puces Apple Silicon</span>
-        </a>
-
-        <a href="https://archive.org/details/mac-os-catalina-iso-10.15.7" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 10.15 Catalina (7 Octobre 2019)</span>
-            <span class="details">Fin des applications 32 bits et remplacement d'iTunes par Musique, TV et Podcasts</span>
-        </a>
-
-        <a href="https://archive.org/details/macos-mojave-10.14" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 10.14 Mojave (24 Septembre 2018)</span>
-            <span class="details">Introduction du Mode Sombre officiel et du Mac App Store repensé</span>
-        </a>
-
-        <a href="https://archive.org/details/macos-high-sierra-10.13.0" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 10.13 High Sierra (25 Septembre 2017)</span>
-            <span class="details">Arrivée du nouveau système de fichiers Apple File System (APFS)</span>
-        </a>
-
-        <a href="https://archive.org/details/macos-sierra-10.12.0" class="iso-article" target="_blank">
-            <span class="iso-titre">macOS 10.12 Sierra (20 Septembre 2016)</span>
-            <span class="details">OS X change de nom pour devenir macOS et accueille l'assistant Siri</span>
-        </a>
-    </div>
-
-    <!-- 3. Catégorie macOS Rétro -->
-    <div class="catégorie">
-        <h2>macOS Rétro (OS X)</h2>
-
-        <a href="https://archive.org/details/el-capitan_202405" class="iso-article" target="_blank">
-            <span class="iso-titre">OS X 10.11 El Capitan (30 Septembre 2015)</span>
-            <span class="details">Améliorations des performances et introduction du Split View</span>
-        </a>
-
-        <a href="https://archive.org/details/yosemite_202405" class="iso-article" target="_blank">
-            <span class="iso-titre">OS X 10.10 Yosemite (16 Octobre 2014)</span>
-            <span class="details">Grand changement visuel avec l'effet de transparence "Flat Design"</span>
-        </a>
-
-        <a href="https://archive.org/details/os-x-mavericks-10.9.5" class="iso-article" target="_blank">
-            <span class="iso-titre">OS X 10.9 Mavericks (22 Octobre 2013)</span>
-            <span class="details">Première version de Mac OS X entièrement gratuite pour le public</span>
-        </a>
-
-        <a href="https://archive.org/details/nireshs-10.8.2-installer" class="iso-article" target="_blank">
-            <span class="iso-titre">OS X 10.8 Mountain Lion (25 Juillet 2012)</span>
-            <span class="details">Intégration d'iMessage, du Centre de notifications et du Game Center</span>
-        </a>
-
-        <a href="https://archive.org/details/mac-os-x-lion-10.7.5" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.7 Lion (20 Juillet 2011)</span>
-            <span class="details">Arrivée du Launchpad, d'AirDrop et du défilement naturel</span>
-        </a>
-
-        <a href="https://archive.org/details/BootCamp_201906" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.6 Snow Leopard (28 Août 2009)</span>
-            <span class="details">Version légendaire axée sur la stabilité et l'optimisation système</span>
-        </a>
-
-        <a href="https://archive.org/details/691-6178-a-2-z-mac-os-x-leopard-v-10.5.1.-install-dvd-dvd-dl" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.5 Leopard (26 Octobre 2007)</span>
-            <span class="details">Introduction de Time Machine, de Spaces et d'un Dock en 3D</span>
-        </a>
-
-        <a href="https://archive.org/details/MacOSXMrVirtual" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.4 Tiger (29 Avril 2005)</span>
-            <span class="details">Arrivée du moteur de recherche Spotlight et du Dashboard avec les widgets</span>
-        </a>
-
-        <a href="https://archive.org/details/mac-os-x-10.3" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.3 Panther (24 Octobre 2003)</span>
-            <span class="details">Mise à jour majeure du Finder et intégration de l'interface "brossée"</span>
-        </a>
-
-        <a href="https://archive.org/details/mac-os-x-jaguar-install-cd" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.2 Jaguar (24 Août 2002)</span>
-            <span class="details">Ajout de l'application Mail, d'iChat et d'un boost graphique (Quartz Extreme)</span>
-        </a>
-
-        <a href="https://archive.org/details/mac-os-x-puma" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.1 Puma (25 Septembre 2001)</span>
-            <span class="details">Amélioration majeure de la vitesse et ajout de la lecture de DVD</span>
-        </a>
-
-        <a href="https://archive.org/details/mac-oscheetah" class="iso-article" target="_blank">
-            <span class="iso-titre">Mac OS X 10.0 Cheetah (24 Mars 2001)</span>
-            <span class="details">Tout premier système Mac OS X avec l'interface graphique Aqua d'origine</span>
-        </a>
-    </div>
-
-    <!-- SECTION OUTILS -->
-    <div class="catégorie">
-        <h2 style="margin-top:0; color: #333333; border-bottom: 2px solid #0078d7; padding-bottom: 10px;">
-            🧰 Outil Indispensable
-        </h2>
-        <div class="iso-article" style="flex-direction: row; justify-content: space-between; align-items: center; cursor: default;">
-            <span>
-                <img src="VMware.png" width="30" style="margin-right:10px; vertical-align:middle;">
-                <b>VMware Workstation</b> - Tester Windows en l'installant
-            </span>
-            <a href="https://www.clubic.com/telecharger-fiche121950-vmware-workstation.html" class="bouton-dl" target="_blank">Téléchargement Sécurisé</a>
+      </div>
+      <div class="card" data-details="Nouvelle interface Liquid Glass, barre de menu transparente et Spotlight amélioré.">
+        <div class="card-info">
+          <h3>macOS 26 Tahoe</h3>
+          <p class="release-date">Sortie : 15 Septembre 2025</p>
         </div>
+      </div>
+      <div class="card" data-details="Recopie de l'iPhone sur Mac, fenêtrage automatique amélioré et nouveaux effets vidéo.">
+        <div class="card-info">
+          <h3>macOS 15 Sequoia</h3>
+          <p class="release-date">Sortie : 16 Septembre 2024</p>
+        </div>
+      </div>
+      <div class="card" data-details="Widgets interactifs sur le bureau, économiseurs d'écran en vidéo ralentie et mode Jeu.">
+        <div class="card-info">
+          <h3>macOS 14 Sonoma</h3>
+          <p class="release-date">Sortie : 26 Septembre 2023</p>
+        </div>
+      </div>
+      <div class="card" data-details="Introduction de Stage Manager et refonte complète de l'application Réglages Système.">
+        <div class="card-info">
+          <h3>macOS 13 Ventura</h3>
+          <p class="release-date">Sortie : 24 Octobre 2022</p>
+        </div>
+      </div>
+      <div class="card" data-details="Fonctionnalité Contrôle universel et introduction de l'application Raccourcis sur Mac.">
+        <div class="card-info">
+          <h3>macOS 12 Monterey</h3>
+          <p class="release-date">Sortie : 25 Octobre 2021</p>
+        </div>
+      </div>
     </div>
 
-    <!-- Section : Tableau des Émulateurs -->
-    <div class="catégorie">
-        <h2>💻 Guide des Émulateurs par Version</h2>
-        <p style="font-size: 0.9em; color: #666;">Voici les meilleurs émulateurs recommandés pour tester ces ISO selon leur époque :</p>
+    <!-- macOS Classique -->
+    <h2 class="era-title">macOS Classique (2016 - 2020)</h2>
+    <div class="macos-grid">
+      <div class="card" data-details="Nouvelle interface visuelle épurée et transition historique vers les puces Apple Silicon.">
+        <div class="card-info">
+          <h3>macOS 11 Big Sur</h3>
+          <p class="release-date">Sortie : 12 Novembre 2020</p>
+        </div>
+      </div>
+      <div class="card" data-details="Fin du support des applications 32 bits et remplacement d'iTunes par Musique, TV et Podcasts.">
+        <div class="card-info">
+          <h3>macOS 10.15 Catalina</h3>
+          <p class="release-date">Sortie : 7 Octobre 2019</p>
+        </div>
+      </div>
+      <div class="card" data-details="Introduction officielle du Mode Sombre à l'échelle du système et Mac App Store repensé.">
+        <div class="card-info">
+          <h3>macOS 10.14 Mojave</h3>
+          <p class="release-date">Sortie : 24 Septembre 2018</p>
+        </div>
+      </div>
+      <div class="card" data-details="Passage au nouveau système de fichiers Apple File System (APFS) et optimisation Metal 2.">
+        <div class="card-info">
+          <h3>macOS 10.13 High Sierra</h3>
+          <p class="release-date">Sortie : 25 Septembre 2017</p>
+        </div>
+      </div>
+      <div class="card" data-details="OS X change de nom officiel pour devenir macOS et intègre pour la première fois l'assistant Siri.">
+        <div class="card-info">
+          <h3>macOS 10.12 Sierra</h3>
+          <p class="release-date">Sortie : 20 Septembre 2016</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OS X Rétro -->
+    <h2 class="era-title">OS X Rétro (2001 - 2015)</h2>
+    <div class="macos-grid">
+      <div class="card" data-details="Optimisation globale des performances du système et gestion du multi-fenêtrage Split View.">
+        <div class="card-info">
+          <h3>OS X 10.11 El Capitan</h3>
+          <p class="release-date">Sortie : 30 Septembre 2015</p>
+        </div>
+      </div>
+      <div class="card" data-details="Refonte visuelle inspirée d'iOS 7 avec effets de transparence et design plat (Flat Design).">
+        <div class="card-info">
+          <h3>OS X 10.10 Yosemite</h3>
+          <p class="release-date">Sortie : 16 Octobre 2014</p>
+        </div>
+      </div>
+      <div class="card" data-details="Première version de Mac OS X distribuée entièrement gratuitement sur le Mac App Store.">
+        <div class="card-info">
+          <h3>OS X 10.9 Mavericks</h3>
+          <p class="release-date">Sortie : 22 Octobre 2013</p>
+        </div>
+      </div>
+      <div class="card" data-details="Arrivée d'iMessage, du Centre de notifications et intégration avancée d'ICloud.">
+        <div class="card-info">
+          <h3>OS X 10.8 Mountain Lion</h3>
+          <p class="release-date">Sortie : 25 Juillet 2012</p>
+        </div>
+      </div>
+      <div class="card" data-details="Introduction du Launchpad, d'AirDrop et de la gestion des gestes multitouch.">
+        <div class="card-info">
+          <h3>Mac OS X 10.7 Lion</h3>
+          <p class="release-date">Sortie : 20 Juillet 2011</p>
+        </div>
+      </div>
+      <div class="card" data-details="Version mythique axée à 100% sur la stabilité, la rapidité et la libération d'espace disque.">
+        <div class="card-info">
+          <h3>Mac OS X 10.6 Snow Leopard</h3>
+          <p class="release-date">Sortie : 28 Août 2009</p>
+        </div>
+      </div>
+      <div class="card" data-details="Introduction du système d'outil de sauvegarde automatique Time Machine et du Dock 3D.">
+        <div class="card-info">
+          <h3>Mac OS X 10.5 Leopard</h3>
+          <p class="release-date">Sortie : 26 Octobre 2007</p>
+        </div>
+      </div>
+      <div class="card" data-details="Lancement du moteur de recherche Spotlight et de la planche de widgets Dashboard.">
+        <div class="card-info">
+          <h3>Mac OS X 10.4 Tiger</h3>
+          <p class="release-date">Sortie : 29 Avril 2005</p>
+        </div>
+      </div>
+      <div class="card" data-details="Améliorations majeures du Finder, démarrage plus rapide et interface style aluminium brossé.">
+        <div class="card-info">
+          <h3>Mac OS X 10.3 Panther</h3>
+          <p class="release-date">Sortie : 24 Octobre 2003</p>
+        </div>
+      </div>
+      <div class="card" data-details="Ajout de l'application Mail, d'iChat et accélération graphique avec Quartz Extreme.">
+        <div class="card-info">
+          <h3>Mac OS X 10.2 Jaguar</h3>
+          <p class="release-date">Sortie : 24 Août 2002</p>
+        </div>
+      </div>
+      <div class="card" data-details="Mise à jour corrective apportant une hausse globale des performances et la lecture des DVD.">
+        <div class="card-info">
+          <h3>Mac OS X 10.1 Puma</h3>
+          <p class="release-date">Sortie : 25 Septembre 2001</p>
+        </div>
+      </div>
+      <div class="card" data-details="Toute première version commerciale de Mac OS X avec la célèbre interface Aqua.">
+        <div class="card-info">
+          <h3>Mac OS X 10.0 Cheetah</h3>
+          <p class="release-date">Sortie : 24 Mars 2001</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Fenêtre Pop-up (Modale) -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="close-btn" id="closeBtn">&times;</button>
+      <div class="modal-title" id="modalTitle">Nom macOS</div>
+      <div class="modal-body" id="modalText">
+        Texte d'information sur la version macOS...
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© Tous droits réservés — Musée des ISO macOS</p>
+  </footer>
+
+  <script>
+    // Recherche dynamique
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      let filter = this.value.toLowerCase();
+      let cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        let title = card.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(filter)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+
+    // Pop-up au clic sur une carte
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeBtn = document.getElementById('closeBtn');
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('h3').textContent;
+        const details = card.getAttribute('data-details') || 'Informations bientôt disponibles pour cette version.';
         
-        <table class="table-emulateurs">
-            <thead>
-                <tr>
-                    <th>Génération macOS</th>
-                    <th>Versions compatibles</th>
-                    <th>Émulateur recommandé</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>macOS Modernes</strong></td>
-                    <td>26 Tahoe à 12 Monterey</td>
-                    <td><span class="badge-emu">UTM</span> / <span class="badge-emu">VMware Fusion</span></td>
-                </tr>
-                <tr>
-                    <td><strong>macOS Classique</strong></td>
-                    <td>11 Big Sur à 10.12 Sierra</td>
-                    <td><span class="badge-emu">VirtualBox</span> / <span class="badge-emu">UTM (puces M1/M2/M3)</span></td>
-                </tr>
-                <tr>
-                    <td><strong>OS X Rétro (Intel)</strong></td>
-                    <td>10.11 El Capitan à 10.6 Snow Leopard</td>
-                    <td><span class="badge-emu">VMware Workstation</span> / <span class="badge-emu">VirtualBox</span></td>
-                </tr>
-                <tr>
-                    <td><strong>OS X Rétro (PowerPC)</strong></td>
-                    <td>10.5 Leopard à 10.0 Cheetah</td>
-                    <td><span class="badge-emu">QEMU</span> / <span class="badge-emu">PearPC</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        modalTitle.textContent = title;
+        modalText.textContent = details;
+        modalOverlay.style.display = 'flex';
+      });
+    });
 
-</div>
+    // Fermeture du pop-up
+    closeBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
