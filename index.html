@@ -36,9 +36,16 @@
       margin-bottom: 10px;
     }
 
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
     .back-link {
       display: inline-block;
-      margin-bottom: 20px;
       color: var(--accent-color);
       text-decoration: none;
       font-size: 0.95rem;
@@ -197,7 +204,10 @@
 
   <header>
     <h1>🍏 Musée des ISO macOS</h1>
-    <a href="https://eyden57185.github.io/tous-les-iphones/" class="back-link">📱 Encyclopédie iPhone</a>
+    <div class="nav-buttons">
+      <a href="https://eyden57185.github.io/" class="back-link">🪟 ISO Windows</a>
+      <a href="https://eyden57185.github.io/tous-les-iphones/" class="back-link">📱 Encyclopédie iPhone</a>
+    </div>
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Rechercher une version (ex: Tahoe, Sequoia, Snow Leopard)...">
     </div>
