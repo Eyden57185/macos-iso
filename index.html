@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musée des ISO - Accueil Général</title>
-    <link rel="shortcut icon" type="image/png" href="favicon-macos.png?v=3">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-macos.png?v=3">
+    <link rel="shortcut icon" type="image/png" href="favicon-macos.png?v=5">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-macos.png?v=5">
     <style>
         @keyframes fondQuiBouge {
             0% { background-position: 0% 50%; background-size: 110% 110%; }
@@ -41,11 +41,35 @@
 
         .catégorie { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
         h2 { border-bottom: 2px solid #0078d4; color: #0078d4; margin-top: 0; padding-bottom: 10px; }
-        .iso-article { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* Style des éléments macOS en mode Liste / Style iPhone */
+        .iso-article { 
+            display: flex; 
+            flex-direction: column; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee; 
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s;
+        }
+        .iso-article:hover {
+            background-color: #f8f9fa;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 5px;
+        }
         .iso-article:last-child { border-bottom: none; }
-        .details { font-size: 0.85em; color: #666; margin-top: 4px; display: block; }
-        .bouton-dl { background-color: #28a745; color: white; padding: 8px 12px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; }
-        .bouton-dl:hover { background-color: #218838; }
+        
+        .iso-titre { 
+            font-weight: bold; 
+            font-size: 1.1em; 
+            color: #0078d4; 
+            margin-bottom: 5px;
+        }
+        .details { 
+            font-size: 0.9em; 
+            color: #555; 
+        }
 
         /* Style du Tableau des Émulateurs */
         .table-emulateurs { width: 100%; border-collapse: collapse; margin-top: 15px; }
@@ -77,199 +101,131 @@
     <!-- 1. Catégorie macOS Modernes -->
     <div class="catégorie">
         <h2>macOS Modernes</h2>
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 27 Golden Gate (14 septembre 2026)</span>
-                <span class="details">Nouvelle interface "Liquid Glass", barre de menu transparente, icônes et couleurs personnalisables, Spotlight amélioré</span>
-            </div>
-            <a href="" class="bouton-dl">Télécharger</a>
-        </div>
         
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 26 Tahoe (15 Septembre 2025)</span>
-                <span class="details">Nouvelle interface "Liquid Glass", barre de menu transparente, icônes et couleurs personnalisables, Spotlight amélioré</span>
-            </div>
-            <a href="https://archive.org/details/macos-tahoe" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/macos-tahoe" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 27 Golden Gate (14 septembre 2026)</span>
+            <span class="details">Nouvelle interface "Liquid Glass", barre de menu transparente, icônes et couleurs personnalisables, Spotlight amélioré</span>
+        </a>
+        
+        <a href="https://archive.org/details/macos-tahoe" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 26 Tahoe (15 Septembre 2025)</span>
+            <span class="details">Nouvelle interface "Liquid Glass", barre de menu transparente, icônes et couleurs personnalisables, Spotlight amélioré</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 15 Sequoia (16 Septembre 2024)</span>
-                <span class="details">Dernière mise à jour majeure du système</span>
-            </div>
-            <a href="https://archive.org/details/install-mac-os-sequoia" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/install-mac-os-sequoia" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 15 Sequoia (16 Septembre 2024)</span>
+            <span class="details">Dernière mise à jour majeure du système</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 14 Sonoma (26 Septembre 2023)</span>
-                <span class="details">Nouvelle expérience avec les widgets sur le bureau et économiseurs d'écran</span>
-            </div>
-            <a href="https://archive.org/download/macos-ventura-and-sonoma" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/download/macos-ventura-and-sonoma" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 14 Sonoma (26 Septembre 2023)</span>
+            <span class="details">Nouvelle expérience avec les widgets sur le bureau et économiseurs d'écran</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 13 Ventura (24 Octobre 2022)</span>
-                <span class="details">Introduction de Stage Manager et des nouveaux réglages système</span>
-            </div>
-            <a href="https://archive.org/download/macos-ventura-and-sonoma" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/download/macos-ventura-and-sonoma" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 13 Ventura (24 Octobre 2022)</span>
+            <span class="details">Introduction de Stage Manager et des nouveaux réglages système</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 12 Monterey (25 Octobre 2021)</span>
-                <span class="details">Fonctionnalités Contrôle universel et Raccourcis sur Mac</span>
-            </div>
-            <a href="https://archive.org/details/macOS_Monterey_12_6_1" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/macOS_Monterey_12_6_1" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 12 Monterey (25 Octobre 2021)</span>
+            <span class="details">Fonctionnalités Contrôle universel et Raccourcis sur Mac</span>
+        </a>
     </div>
 
     <!-- 2. Catégorie macOS Classique -->
     <div class="catégorie">
         <h2>macOS Classique</h2>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 11 Big Sur (12 Novembre 2020)</span>
-                <span class="details">Nouvelle interface épurée et transition vers les puces Apple Silicon</span>
-            </div>
-            <a href="https://archive.org/download/macOS-X-images/Big%20Sur%2011.iso" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/download/macOS-X-images/Big%20Sur%2011.iso" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 11 Big Sur (12 Novembre 2020)</span>
+            <span class="details">Nouvelle interface épurée et transition vers les puces Apple Silicon</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 10.15 Catalina (7 Octobre 2019)</span>
-                <span class="details">Fin des applications 32 bits et remplacement d'iTunes par Musique, TV et Podcasts</span>
-            </div>
-            <a href="https://archive.org/details/mac-os-catalina-iso-10.15.7" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/mac-os-catalina-iso-10.15.7" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 10.15 Catalina (7 Octobre 2019)</span>
+            <span class="details">Fin des applications 32 bits et remplacement d'iTunes par Musique, TV et Podcasts</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 10.14 Mojave (24 Septembre 2018)</span>
-                <span class="details">Introduction du Mode Sombre officiel et du Mac App Store repensé</span>
-            </div>
-            <a href="https://archive.org/details/macos-mojave-10.14" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/macos-mojave-10.14" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 10.14 Mojave (24 Septembre 2018)</span>
+            <span class="details">Introduction du Mode Sombre officiel et du Mac App Store repensé</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 10.13 High Sierra (25 Septembre 2017)</span>
-                <span class="details">Arrivée du nouveau système de fichiers Apple File System (APFS)</span>
-            </div>
-            <a href="https://archive.org/details/macos-high-sierra-10.13.0" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/macos-high-sierra-10.13.0" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 10.13 High Sierra (25 Septembre 2017)</span>
+            <span class="details">Arrivée du nouveau système de fichiers Apple File System (APFS)</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">macOS 10.12 Sierra (20 Septembre 2016)</span>
-                <span class="details">OS X change de nom pour devenir macOS et accueille l'assistant Siri</span>
-            </div>
-            <a href="https://archive.org/details/macos-sierra-10.12.0" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/macos-sierra-10.12.0" class="iso-article" target="_blank">
+            <span class="iso-titre">macOS 10.12 Sierra (20 Septembre 2016)</span>
+            <span class="details">OS X change de nom pour devenir macOS et accueille l'assistant Siri</span>
+        </a>
     </div>
 
     <!-- 3. Catégorie macOS Rétro -->
     <div class="catégorie">
         <h2>macOS Rétro (OS X)</h2>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">OS X 10.11 El Capitan (30 Septembre 2015)</span>
-                <span class="details">Améliorations des performances et introduction du Split View</span>
-            </div>
-            <a href="https://archive.org/details/el-capitan_202405" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/el-capitan_202405" class="iso-article" target="_blank">
+            <span class="iso-titre">OS X 10.11 El Capitan (30 Septembre 2015)</span>
+            <span class="details">Améliorations des performances et introduction du Split View</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">OS X 10.10 Yosemite (16 Octobre 2014)</span>
-                <span class="details">Grand changement visuel avec l'effet de transparence "Flat Design"</span>
-            </div>
-            <a href="https://archive.org/details/yosemite_202405" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/yosemite_202405" class="iso-article" target="_blank">
+            <span class="iso-titre">OS X 10.10 Yosemite (16 Octobre 2014)</span>
+            <span class="details">Grand changement visuel avec l'effet de transparence "Flat Design"</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">OS X 10.9 Mavericks (22 Octobre 2013)</span>
-                <span class="details">Première version de Mac OS X entièrement gratuite pour le public</span>
-            </div>
-            <a href="https://archive.org/details/os-x-mavericks-10.9.5" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/os-x-mavericks-10.9.5" class="iso-article" target="_blank">
+            <span class="iso-titre">OS X 10.9 Mavericks (22 Octobre 2013)</span>
+            <span class="details">Première version de Mac OS X entièrement gratuite pour le public</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">OS X 10.8 Mountain Lion (25 Juillet 2012)</span>
-                <span class="details">Intégration d'iMessage, du Centre de notifications et du Game Center</span>
-            </div>
-            <a href="https://archive.org/details/nireshs-10.8.2-installer" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/nireshs-10.8.2-installer" class="iso-article" target="_blank">
+            <span class="iso-titre">OS X 10.8 Mountain Lion (25 Juillet 2012)</span>
+            <span class="details">Intégration d'iMessage, du Centre de notifications et du Game Center</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.7 Lion (20 Juillet 2011)</span>
-                <span class="details">Arrivée du Launchpad, d'AirDrop et du défilement naturel</span>
-            </div>
-            <a href="https://archive.org/details/mac-os-x-lion-10.7.5" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/mac-os-x-lion-10.7.5" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.7 Lion (20 Juillet 2011)</span>
+            <span class="details">Arrivée du Launchpad, d'AirDrop et du défilement naturel</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.6 Snow Leopard (28 Août 2009)</span>
-                <span class="details">Version légendaire axée sur la stabilité et l'optimisation système</span>
-            </div>
-            <a href="https://archive.org/details/BootCamp_201906" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/BootCamp_201906" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.6 Snow Leopard (28 Août 2009)</span>
+            <span class="details">Version légendaire axée sur la stabilité et l'optimisation système</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.5 Leopard (26 Octobre 2007)</span>
-                <span class="details">Introduction de Time Machine, de Spaces et d'un Dock en 3D</span>
-            </div>
-            <a href="https://archive.org/details/691-6178-a-2-z-mac-os-x-leopard-v-10.5.1.-install-dvd-dvd-dl" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/691-6178-a-2-z-mac-os-x-leopard-v-10.5.1.-install-dvd-dvd-dl" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.5 Leopard (26 Octobre 2007)</span>
+            <span class="details">Introduction de Time Machine, de Spaces et d'un Dock en 3D</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.4 Tiger (29 Avril 2005)</span>
-                <span class="details">Arrivée du moteur de recherche Spotlight et du Dashboard avec les widgets</span>
-            </div>
-            <a href="https://archive.org/details/MacOSXMrVirtual" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/MacOSXMrVirtual" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.4 Tiger (29 Avril 2005)</span>
+            <span class="details">Arrivée du moteur de recherche Spotlight et du Dashboard avec les widgets</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.3 Panther (24 Octobre 2003)</span>
-                <span class="details">Mise à jour majeure du Finder et intégration de l'interface "brossée"</span>
-            </div>
-            <a href="https://archive.org/details/mac-os-x-10.3" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/mac-os-x-10.3" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.3 Panther (24 Octobre 2003)</span>
+            <span class="details">Mise à jour majeure du Finder et intégration de l'interface "brossée"</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.2 Jaguar (24 Août 2002)</span>
-                <span class="details">Ajout de l'application Mail, d'iChat et d'un boost graphique (Quartz Extreme)</span>
-            </div>
-            <a href="https://archive.org/details/mac-os-x-jaguar-install-cd" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/mac-os-x-jaguar-install-cd" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.2 Jaguar (24 Août 2002)</span>
+            <span class="details">Ajout de l'application Mail, d'iChat et d'un boost graphique (Quartz Extreme)</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.1 Puma (25 Septembre 2001)</span>
-                <span class="details">Amélioration majeure de la vitesse et ajout de la lecture de DVD</span>
-            </div>
-            <a href="https://archive.org/details/mac-os-x-puma" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/mac-os-x-puma" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.1 Puma (25 Septembre 2001)</span>
+            <span class="details">Amélioration majeure de la vitesse et ajout de la lecture de DVD</span>
+        </a>
 
-        <div class="iso-article">
-            <div>
-                <span style="font-weight: bold;">Mac OS X 10.0 Cheetah (24 Mars 2001)</span>
-                <span class="details">Tout premier système Mac OS X avec l'interface graphique Aqua d'origine</span>
-            </div>
-            <a href="https://archive.org/details/mac-oscheetah" class="bouton-dl">Télécharger</a>
-        </div>
+        <a href="https://archive.org/details/mac-oscheetah" class="iso-article" target="_blank">
+            <span class="iso-titre">Mac OS X 10.0 Cheetah (24 Mars 2001)</span>
+            <span class="details">Tout premier système Mac OS X avec l'interface graphique Aqua d'origine</span>
+        </a>
     </div>
 
     <!-- SECTION OUTILS -->
@@ -277,7 +233,7 @@
         <h2 style="margin-top:0; color: #333333; border-bottom: 2px solid #0078d7; padding-bottom: 10px;">
             🧰 Outil Indispensable
         </h2>
-        <div class="iso-article">
+        <div class="iso-article" style="flex-direction: row; justify-content: space-between; align-items: center; cursor: default;">
             <span>
                 <img src="VMware.png" width="30" style="margin-right:10px; vertical-align:middle;">
                 <b>VMware Workstation</b> - Tester Windows en l'installant
